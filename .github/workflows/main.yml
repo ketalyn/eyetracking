@@ -10,9 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout code without submodules
-        uses: actions/checkout@v2
+      - name: Clear cache
+        uses: actions/cache@v2
         with:
-          submodules: false
-          clean: true
+          path: |
+            ~/.npm
+            ~/.cache
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+            # ^ This key should match the key used when caching npm dependencies
+          restore-keys: |
+            ${{ runner.os }}-npm-
+            ${{ runner.os }}-
 
