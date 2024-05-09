@@ -3,6 +3,11 @@ video#webgazerVideoFeed {
     display: none;
 }
 
+#webgazerGazeDot{
+    display: none !important;
+    
+}
+
 #plotting_canvas {
     position: relative; /* Set canvas position to relative */
     z-index: 0; /* Set canvas z-index to 0 */
@@ -166,7 +171,8 @@ video#webgazerVideoFeed {
     font-family: 'OwnersText';
     font-size: 4rem;
     margin-top: 3%;
-    margin-left: 3%;
+    width: 90%;
+    margin-left: -3%;
 }
 
 .swal-button{
@@ -179,8 +185,9 @@ video#webgazerVideoFeed {
     width:25vh;
     margin-left: 300%;
     margin-top: 0%;
-
+    border: 2px solid #000000; /* Border style */
 }
+
 
 .custom-swal-popup2 .swal-button:hover {
     background-color: rgb(0, 0, 0);
